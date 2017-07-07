@@ -1,0 +1,20 @@
+# YAML list
+- Account: kubernetes-account-name   #  Service account name.
+  # Option for auto-deploy cluster. Applications(charts) will be updated on every push to repository.
+  AutoDeploy: false
+  # Cluster name
+  Name: kubernetes-cluster
+  # Cluster provider (currenty only google/amazon/kubernetes are supported)
+  Provider: kubernetes
+  # Source file where full cluster definition for this provider is stored.
+  Src: k8s-cluster.yaml
+- Account: google-project
+  AutoDeploy: false
+  Name: goolge-cluster
+  Provider: google
+  Src: gce-cluster.yaml
+- Account: 123456678 # Amazon account
+  AutoDeploy: false
+  Name: amazon-cluster
+  Provider: amazon
+  Src: aws-cluster.yaml
