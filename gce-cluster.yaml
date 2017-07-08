@@ -46,31 +46,20 @@ instances:
       # Disk size in GBs.
       diskSizeGb: "32"
 # -1 means that group will not be spawned at cluster deployment stage.
-# For GPU groups, it is possible to start them on demand later. 
+# For GPU groups, it is possible to start them on demand later, during building model.
+# In this case instances will be started during model building and stoped after it.
 - count: -1
   # GPU configuration.
   gpu:
     # GPUs count.
   - acceleratorCount: 1
     # GPU model. Currently supported models see at https://cloud.google.com/compute/docs/gpus/
+    # May be ommited. nvidia-tesla-k80 by default.
     acceleratorType: nvidia-tesla-k80
   instance_type: n1-standard-2
   labels:
     type: gpu
   name: gpunodes
-  volumes:
-  - autoDelete: true
-    boot: true
-    initializeParams:
-      diskSizeGb: "32"
-- count: -1
-  gpu:
-  - acceleratorCount: 1
-    acceleratorType: nvidia-tesla-k80
-  instance_type: n1-standard-2
-  labels:
-    type: gputest
-  name: gputest
   volumes:
   - autoDelete: true
     boot: true
