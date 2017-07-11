@@ -13,6 +13,8 @@ master_disk_type: pd-standard
 # Master instance type. Includes allocated resources such as amount of CPU and RAM.
 # Read more about machine types at https://cloud.google.com/compute/docs/machine-types
 master_type: n1-standard-2
+# Master overall count for High-availability masters.
+master_count: 3
 # Cluster name
 name: gce-cluster
 # (Optional) Storage section.
