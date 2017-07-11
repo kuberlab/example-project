@@ -3,6 +3,7 @@ region: us-east1
 # Google zone where cluster instances are deployed.
 zone: us-east1-d
 # Kubernetes version to use during cluster deployment. (Supports semantic version)
+# Only v1.6.x currenty supported.
 kubernetes_version: v1.6.6
 # Master disk size in gigabytes. 
 master_disk_size: 32
